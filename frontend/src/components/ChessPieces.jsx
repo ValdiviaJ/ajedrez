@@ -1,5 +1,4 @@
-import React from 'react';
-import './App.css';
+import '../App.css';
 
 // Diccionario de piezas de ajedrez estilizadas como SVGs inline para una apariencia premium vectorizada e interactiva
 export const ChessPieces = {
