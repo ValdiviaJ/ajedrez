@@ -1,0 +1,497 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 10px 24px;
+}
+
+/* 1. Navbar Estilo Neon Glassmorphism */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-neon);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(186, 12, 248, 0.15);
+  margin-bottom: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.neon-sphere {
+  width: 14px;
+  height: 14px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--neon-cyan), 0 0 24px var(--neon-cyan);
+  animation: pulse 2s infinite alternate;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.neon-accent {
+  color: var(--neon-purple);
+  text-shadow: 0 0 8px var(--neon-purple);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  font-weight: 600;
+}
+
+.user-elo {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--neon-gold);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--neon-gold);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.btn-logout {
+  background: transparent;
+  border: none;
+  color: var(--neon-pink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: transform 0.2s;
+}
+
+.btn-logout:hover {
+  transform: scale(1.1);
+}
+
+.btn-login-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-login-toggle:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* 2. Layout Principal */
+.main-content {
+  display: grid;
+  grid-template-columns: 320px 1fr 280px;
+  gap: 20px;
+  height: calc(100vh - 120px);
+}
+
+/* 3. Tarjetas / Componentes Modulares */
+.neon-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-neon);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 24px rgba(186, 12, 248, 0.08);
+  margin-bottom: 20px;
+}
+
+.neon-card h3 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Formularios */
+.input-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.input-group input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--neon-purple);
+}
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+.error-text {
+  color: var(--neon-pink);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Ranking y Leaderboard */
+.leaderboard-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leaderboard-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  font-size: 13px;
+  align-items: center;
+}
+
+.leaderboard-list li.current-user {
+  border: 1px solid var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.rank-num {
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+
+.rank-elo {
+  font-weight: 700;
+  color: var(--neon-gold);
+}
+
+/* Modos de Juego */
+.modes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-mode {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.btn-mode:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--neon-purple);
+}
+
+.difficulty-selector {
+  display: flex;
+  gap: 5px;
+}
+
+.difficulty-selector button {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.difficulty-selector button.active {
+  background: var(--neon-purple);
+  color: #fff;
+  border-color: var(--neon-purple);
+}
+
+.multiplayer-controls h4 {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 15px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.btn-group-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-mini {
+  flex: 1;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.btn-mini:hover {
+  border-color: var(--neon-cyan);
+}
+
+.join-group {
+  display: flex;
+  gap: 6px;
+}
+
+.join-group input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+}
+
+.join-group button {
+  background: var(--neon-purple);
+  border: none;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 4. Tablero de Ajedrez */
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.player-bar {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+
+.player-bar.bottom {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.player-bar.active-turn {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+}
+
+.reloj {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+
+.chess-board-wrapper {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(186, 12, 248, 0.25);
+}
+
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.board-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.board-cell.light {
+  background-color: var(--board-light);
+}
+
+.board-cell.dark {
+  background-color: var(--board-dark);
+}
+
+.board-cell.selected {
+  background-color: var(--cell-highlight) !important;
+}
+
+.board-cell.possible-move {
+  background-color: var(--cell-valid);
+}
+
+.move-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--neon-pink);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 8px var(--neon-pink);
+}
+
+.chess-piece {
+  width: 80%;
+  height: 80%;
+  z-index: 10;
+  transition: transform 0.2s;
+}
+
+.chess-piece:hover {
+  transform: scale(1.12);
+}
+
+/* Historial de Jugadas */
+.history-card {
+  height: 100%;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  gap: 10px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.move-num {
+  color: var(--text-muted);
+}
+
+.move-san {
+  font-weight: 600;
+}
+
+/* Pantalla de Espera Multijugador */
+.waiting-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 5, 27, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 12px;
+  border: 1px solid var(--border-neon);
+}
+
+.loader {
+  border: 3px solid rgba(0, 240, 255, 0.1);
+  border-top: 3px solid var(--neon-cyan);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.highlight-code {
+  color: var(--neon-cyan);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

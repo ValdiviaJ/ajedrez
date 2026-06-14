@@ -1,0 +1,48 @@
+:root {
+  --bg-primary: #0a051b;
+  --bg-secondary: rgba(20, 10, 45, 0.6);
+  --border-neon: rgba(186, 12, 248, 0.4);
+  --text-primary: #f1ecff;
+  --text-muted: #8c7fa6;
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff007f;
+  --neon-purple: #ba0cf8;
+  --neon-gold: #ffd700;
+  
+  --board-light: rgba(255, 255, 255, 0.03);
+  --board-dark: rgba(20, 5, 40, 0.8);
+  --cell-highlight: rgba(0, 240, 255, 0.25);
+  --cell-valid: rgba(255, 0, 127, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(186, 12, 248, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 240, 255, 0.1) 0px, transparent 50%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar premium */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-purple);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
