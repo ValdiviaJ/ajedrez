@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chess } from 'chess.js';
-import { ChessPieces } from './ChessPieces';
+import { ChessPieces } from './components/ChessPieces';
 import { Play, LogIn, Award, UserPlus, LogOut, ArrowRight, RotateCcw, Clock, Trophy, ChevronRight } from 'lucide-react';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
